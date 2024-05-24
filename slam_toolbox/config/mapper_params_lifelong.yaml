@@ -7,10 +7,10 @@ ceres_dogleg_type: TRADITIONAL_DOGLEG
 ceres_loss_function: None
 
 # ROS Parameters
-odom_frame: odom
-map_frame: map
-base_frame: base_footprint
-scan_topic: /scan
+odom_frame: robot_odom
+map_frame: robot_map
+base_frame: robot_base_footprint
+scan_topic: /robot/merged_laser/scan
 mode: mapping
 
 # lifelong params
@@ -26,8 +26,8 @@ lifelong_candidates_scale: 0.03
 # if you'd like to immediately start continuing a map at a given pose
 # or at the dock, but they are mutually exclusive, if pose is given
 # will use pose
-#map_file_name: test_steve
-#map_start_pose: [0.0, 0.0, 0.0]
+map_file_name: $(arg map_file_name)
+map_start_pose: $(arg map_start_pose)
 #map_start_at_dock: true
 
 debug_logging: false

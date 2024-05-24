@@ -1,7 +1,11 @@
 <launch>
 
+  <arg name="map_file_name" value="/home/afont/maps/test_local_3" />
+  <arg name="map_start_pose" value="[5.13, -1.17, -3.14]" />
+
   <node pkg="slam_toolbox" type="lifelong_slam_toolbox_node" name="slam_toolbox" output="screen">
-    <rosparam command="load" file="$(find slam_toolbox)/config/mapper_params_lifelong.yaml" />
+    <rosparam command="load" file="$(find slam_toolbox)/config/mapper_params_lifelong.yaml" subst_value="true" />
+
   </node>
 
 </launch>
